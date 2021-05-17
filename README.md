@@ -20,6 +20,5 @@ https://www.youtube.com/watch?v=zTsRGQj6VT4
 <br>The Java code for this similation is available on my GitHub if anyone wants to explore this further.  :)
 <br>https://github.com/MooseValley/Math---Gambling-with-Martingale-Strategy
 
-**Moose's Software Valley - Established July, 1996.
-<br>https://moosevalley.github.io/
-**
+**Moose's Software Valley - Established July, 1996.**
+<br>**https://moosevalley.github.io/**
