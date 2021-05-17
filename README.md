@@ -1,5 +1,10 @@
 # Math - Gambling with Martingale Strategy
 
+My Java code to explore the Martingale Strategy betting strategy for American and European Roulette Wheels.
+
+Included below are the comments I made for the Numberphile YouTube video.
+
+
 * **Gambling with the Martingale Strategy - Numberphile**
 https://www.youtube.com/watch?v=zTsRGQj6VT4
 
