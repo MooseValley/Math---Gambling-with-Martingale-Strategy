@@ -1,0 +1,9 @@
+
+Martingale Strategy for 100,000 games of roulette, bank balance $100, and original bet $1:
+
+American Roulette 0, 00, 1-35
+* Hands to go Bankrupt: , Min: 7, Average: 82, Max: 524, Higest bank balance achieved: $130.00
+
+European Roulette 0, 1-36
+* Hands to go Bankrupt: , Min: 7, Average: 92, Max: 455, Higest bank balance achieved: $137.00
+

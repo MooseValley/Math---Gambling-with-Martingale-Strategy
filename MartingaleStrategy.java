@@ -13,13 +13,12 @@ public class MartingaleStrategy
 {
    // American Roulette 0, 00, 1-35
    // European Roulette 0, 1-36
-   public static double CHANCE_OF_RED_WIN_AMERICAN = 1.0 * 35 / 37 / 2;
-   public static double CHANCE_OF_RED_WIN_EUROPEAN = 1.0 * 36 / 37 / 2;
-   public static double CHANCE_OF_RED_WIN = CHANCE_OF_RED_WIN_AMERICAN;
+   public static final double CHANCE_OF_RED_WIN_AMERICAN = 1.0 * 35 / 37 / 2;
+   public static final double CHANCE_OF_RED_WIN_EUROPEAN = 1.0 * 36 / 37 / 2;
+   public static final double ORIGINAL_BANK_BALANCE      = 100.0;
+   public static final double ORIGINAL_BET_AMOUNT        = 1.0;
 
-   public static double ORIGINAL_BANK_BALANCE = 100.0;
-   public static double ORIGINAL_BET_AMOUNT   = 1.0;
-
+   public static double chanceOfRedWin = CHANCE_OF_RED_WIN_AMERICAN;
    public static double currentBankBalance;
    public static double currentBetAmount;
    public static double maxBankBalance;
@@ -43,7 +42,7 @@ public class MartingaleStrategy
 
          double rand = generator.nextDouble();
 
-         if (rand < CHANCE_OF_RED_WIN) // Have we WON ???
+         if (rand < chanceOfRedWin) // Have we WON ???
          {
             currentBankBalance = currentBankBalance + ORIGINAL_BET_AMOUNT;
 
@@ -75,8 +74,22 @@ public class MartingaleStrategy
    }
 
 
-   public static void main (String[] args)
+   public static void runSimulationForWheel (String wheelTypeStr)
    {
+      if (wheelTypeStr.equals("AMERICAN") == true)
+      {
+         chanceOfRedWin = CHANCE_OF_RED_WIN_AMERICAN;
+      }
+      else if (wheelTypeStr.equals("EUROPEAN") == true)
+      {
+         chanceOfRedWin = CHANCE_OF_RED_WIN_EUROPEAN;
+      }
+      else
+      {
+         System.out.println ("ERROR: unknown Roulette Wheel type: '" + wheelTypeStr + "'.");
+         System.exit(-1); // ERROR.
+      }
+
       final int NUM_GAMES      = 100_000;
 
       int    totalIterations = 0;
@@ -87,8 +100,8 @@ public class MartingaleStrategy
       maxBankBalance = 0.0;
 
       System.out.println ();
-      System.out.println ("Martingale Strategy for " + String.format ("%,d", NUM_GAMES) + " games of roulette:" );
-      System.out.println ();
+      System.out.println ("Martingale Strategy for " + String.format ("%,d", NUM_GAMES) + " games of " + wheelTypeStr + " Roulette:" );
+      //System.out.println ();
 
       for (int k = 0; k < NUM_GAMES; k++)
       {
@@ -105,13 +118,23 @@ public class MartingaleStrategy
 
       avgIterations = totalIterations / NUM_GAMES;
 
-      System.out.println ();
-      System.out.println ("Hands to go Bankrupt: "      +
+      //System.out.println ();
+      System.out.println ("* Hands to go Bankrupt: "      +
                           ", Min: "     + String.format ("%,d",  minIterations) +
                           ", Average: " + String.format ("%.0f", avgIterations) +
                           ", Max: "     + String.format ("%,d",  maxIterations) +
                           ", Higest bank balance achieved: $" + String.format ("%.2f", maxBankBalance)
                           );
 
+   }
+
+
+   public static void main (String[] args)
+   {
+      runSimulationForWheel ("AMERICAN");
+      System.out.println ();
+
+      runSimulationForWheel ("EUROPEAN");
+      System.out.println ();
    }
 }
