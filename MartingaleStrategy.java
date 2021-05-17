@@ -6,6 +6,9 @@
 Description: Explore Martingale Strategy betting strategy for American and European Roulette Wheels.
 Inspiration: Gambling with the Martingale Strategy - Numberphile, https://www.youtube.com/watch?v=zTsRGQj6VT4
 
+Moose's Software Valley - Established July, 1996.
+https://moosevalley.github.io/
+
 */
 import java.security.SecureRandom;
 
