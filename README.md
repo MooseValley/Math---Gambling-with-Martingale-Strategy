@@ -22,5 +22,5 @@ https://www.youtube.com/watch?v=zTsRGQj6VT4
 
 
 **Moose OMalley**
-**Moose's Software Valley - Established July, 1996.**
+<br>**Moose's Software Valley - Established July, 1996.**
 <br>**https://moosevalley.github.io/**
