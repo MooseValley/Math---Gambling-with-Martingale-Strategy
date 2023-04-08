@@ -6,6 +6,12 @@
 Description: Explore Martingale Strategy betting strategy for American and European Roulette Wheels.
 Inspiration: Gambling with the Martingale Strategy - Numberphile, https://www.youtube.com/watch?v=zTsRGQj6VT4
 
+Martingale Strategy
+* your opening / standard bet is $1
+* if you win, keep your bet at $1
+* if you lose, double your bet for the next hand
+* pray like hell that you don't hit a losing streak and run out of money
+
 Moose's Software Valley - Established July, 1996.
 https://moosevalley.github.io/
 
